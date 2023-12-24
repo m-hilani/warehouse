@@ -155,6 +155,11 @@ class CustomOrder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    double fontSize() {
+      return width * 1.75 / 100;
+    }
+
     final List<String> list = /*S.of(context).Arabic == "Arabic"*/
         ["preparing", "sending", "received"];
     /* : ["تحضير", "ارسال", "استلم"];*/
@@ -173,6 +178,7 @@ class CustomOrder extends StatelessWidget {
         Navigator.pushNamed(context, OrderPage.id, arguments: medicinesList);
       },
       child: Container(
+        width: 200,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
           gradient: const LinearGradient(
@@ -195,23 +201,25 @@ class CustomOrder extends StatelessWidget {
               children: [
                 Text(
                   order.username,
-                  style: TextStyle(fontSize: 20, color: Colors.white),
+                  style: TextStyle(fontSize: fontSize(), color: Colors.white),
                 ),
                 Text(
                   "${S.of(context).Order_Number} : ${order.ordernumber}",
-                  style: TextStyle(fontSize: 20, color: Colors.white),
+                  style: TextStyle(fontSize: fontSize(), color: Colors.white),
                 ),
                 Text(
                   S.of(context).quantity + "  ${order.total_quantity}",
-                  style: TextStyle(fontSize: 20, color: Colors.white),
+                  style: TextStyle(fontSize: fontSize(), color: Colors.white),
                 ),
+                /*
                 SizedBox(
                   width: 10,
-                ),
+                ),*/
                 DropdownMenu<String>(
+                  width: fontSize() * 7,
                   textStyle: TextStyle(
                     color: Colors.white,
-                    fontSize: 18,
+                    fontSize: fontSize(),
                   ),
                   initialSelection: order.status,
                   onSelected: (String? value) async {
@@ -239,9 +247,10 @@ class CustomOrder extends StatelessWidget {
                 Row(
                   children: [
                     DropdownMenu<String>(
+                      width: fontSize() * 8,
                       textStyle: TextStyle(
                         color: Colors.white,
-                        fontSize: 18,
+                        fontSize: fontSize(),
                       ),
                       initialSelection: order.paid,
                       onSelected: (String? value) async {
@@ -271,7 +280,7 @@ class CustomOrder extends StatelessWidget {
                 ),
                 Text(
                   r"$" "${order.total_price.toString()}",
-                  style: TextStyle(fontSize: 20, color: Colors.white),
+                  style: TextStyle(fontSize: fontSize(), color: Colors.white),
                 ),
               ],
             ),

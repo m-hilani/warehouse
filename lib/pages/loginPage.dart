@@ -146,7 +146,7 @@ class _LogInPageState extends State<LogInPage> {
                               S.of(context).Read_login,
                               style: TextStyle(color: Colors.black),
                             ),
-                            GestureDetector(
+                            /*  GestureDetector(
                               onTap: () {
                                 Navigator.pushNamed(context, RegisterPage.id);
                               },
@@ -157,7 +157,7 @@ class _LogInPageState extends State<LogInPage> {
                                   fontSize: 18,
                                 ),
                               ),
-                            ),
+                            ),*/
                           ],
                         ),
                       ],
