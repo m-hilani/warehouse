@@ -45,7 +45,7 @@ class _LogInPageState extends State<LogInPage> {
                 child: const CircleAvatar(
                   radius: 300,
                   backgroundImage: AssetImage(
-                    'assets/images/img_2.png',
+                    'assets/images/Login.png',
                   ),
                 ),
               ),
@@ -56,7 +56,7 @@ class _LogInPageState extends State<LogInPage> {
                     child: ListView(
                       children: [
                         const SizedBox(
-                          height: 25,
+                          height: 200,
                         ),
                         /* Row(
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -138,15 +138,15 @@ class _LogInPageState extends State<LogInPage> {
                           },
                           text: S.of(context).title_login,
                         ),
-                        const SizedBox(height: 12)
-                        /*                     Row(
+                        const SizedBox(height: 12),
+                        Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
                               S.of(context).Read_login,
                               style: TextStyle(color: Colors.black),
                             ),
-                              GestureDetector(
+                            GestureDetector(
                               onTap: () {
                                 Navigator.pushNamed(context, RegisterPage.id);
                               },
@@ -159,7 +159,7 @@ class _LogInPageState extends State<LogInPage> {
                               ),
                             ),
                           ],
-                        ),*/
+                        ),
                       ],
                     ),
                   ),

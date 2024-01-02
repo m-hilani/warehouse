@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../generated/l10n.dart';
+
 class CustomTextFild extends StatelessWidget {
   CustomTextFild(
       {super.key,
@@ -21,6 +23,7 @@ class CustomTextFild extends StatelessWidget {
     return TextFormField(
       validator: (data) {
         if (data!.isEmpty) {
+          if (S.of(context).Arabic == "العربية") return " $hintText غير متاح";
           return "Enter the $hintText";
 
           /* if (hintText == "Phone Number")

@@ -240,8 +240,19 @@ class CustomOrder extends StatelessWidget {
                   },
                   dropdownMenuEntries:
                       list.map<DropdownMenuEntry<String>>((String value) {
+                    String label = value;
+
+                    if (S.of(context).Arabic == "العربية") {
+                      if (value == "preparing")
+                        label = "تجهيز";
+                      else if (value == "sending")
+                        label = "ارسال";
+                      else
+                        label = "مستلمة";
+                    }
+
                     return DropdownMenuEntry<String>(
-                        value: value, label: value);
+                        value: value, label: label);
                   }).toList(),
                 ),
                 Row(
@@ -272,8 +283,17 @@ class CustomOrder extends StatelessWidget {
                       },
                       dropdownMenuEntries:
                           paid.map<DropdownMenuEntry<String>>((String value) {
+                        ["Not Paid", "Paid"];
+                        String label = value;
+                        if (S.of(context).Arabic == "العربية") {
+                          if (value == "Not Paid")
+                            label = "غير مدفوع";
+                          else {
+                            label = "مدفوع";
+                          }
+                        }
                         return DropdownMenuEntry<String>(
-                            value: value, label: value);
+                            value: value, label: label);
                       }).toList(),
                     ),
                   ],

@@ -26,6 +26,7 @@ class _AddMedicineState extends State<AddMedicine> {
     "Antihistamine",
     "Others"
   ];
+
   String? selectedCategory = 'Analgesic';
 
   void initState() {
@@ -40,23 +41,6 @@ class _AddMedicineState extends State<AddMedicine> {
     }
   }
 
-  List<DropdownMenuItem<String>> DropDownGenerator() {
-    List<DropdownMenuItem<String>> dropdownItems = [];
-
-    for (int i = 0; i < categories.length; i++) {
-      String category = categories[i];
-      // print(categories[i]);
-      dropdownItems.add(
-        DropdownMenuItem(
-          child: Text(category),
-          value: category as String,
-        ),
-      );
-      // print(category);
-    }
-    return dropdownItems;
-  }
-
   String? scientificName;
   String? commercialName;
   String? category;
@@ -68,6 +52,41 @@ class _AddMedicineState extends State<AddMedicine> {
   String? year;
   @override
   Widget build(BuildContext context) {
+    List<dynamic> labelCategories = S.of(context).Arabic == "Arabic"
+        ? [
+            'Analgesic',
+            'Anti-inflammatory',
+            "Antibiotic",
+            "Antipyretic",
+            "Antihistamine",
+            "Others"
+          ]
+        : [
+            'مسكن',
+            'مضاد التهاب',
+            "مضاد حيوي",
+            "خافض للحرارة",
+            "مضادات الهيستامين",
+            "اخرى"
+          ];
+
+    List<DropdownMenuItem<String>> DropDownGenerator() {
+      List<DropdownMenuItem<String>> dropdownItems = [];
+
+      for (int i = 0; i < categories.length; i++) {
+        String category = categories[i];
+        // print(categories[i]);
+        dropdownItems.add(
+          DropdownMenuItem(
+            child: Text(labelCategories[i]),
+            value: category as String,
+          ),
+        );
+        // print(category);
+      }
+      return dropdownItems;
+    }
+
     double width = MediaQuery.of(context).size.width;
 
     double padding() {
@@ -191,7 +210,9 @@ class _AddMedicineState extends State<AddMedicine> {
                               child: CustomTextFild(
                                 extraValidator: () {
                                   if (int.parse(day!) > 30) {
-                                    return "Invalid month";
+                                    if (S.of(context).Arabic == "العربية")
+                                      return "اليوم غير متاح";
+                                    return "Invalid day";
                                   }
                                 },
                                 onChanged: (value) {
@@ -206,6 +227,8 @@ class _AddMedicineState extends State<AddMedicine> {
                               child: CustomTextFild(
                                 extraValidator: () {
                                   if (int.parse(month!) > 12) {
+                                    if (S.of(context).Arabic == "العربية")
+                                      return "الشهر غير متاح";
                                     return "Invalid month";
                                   }
                                 },
@@ -220,8 +243,11 @@ class _AddMedicineState extends State<AddMedicine> {
                             Expanded(
                               child: CustomTextFild(
                                 extraValidator: () {
-                                  if (int.parse(year!) < 2024)
+                                  if (int.parse(year!) < 2024) {
+                                    if (S.of(context).Arabic == "العربية")
+                                      return "السنة غير متاحة";
                                     return 'the medicine is expired';
+                                  }
                                 },
                                 onChanged: (value) {
                                   year = (value);

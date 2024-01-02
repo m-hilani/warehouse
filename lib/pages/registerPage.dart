@@ -35,7 +35,7 @@ class _RegisterPageState extends State<RegisterPage> {
               Expanded(
                 child: const CircleAvatar(
                   radius: 300,
-                  backgroundImage: AssetImage(klogo),
+                  backgroundImage: AssetImage("assets/images/register.png"),
                 ),
               ),
               Expanded(
