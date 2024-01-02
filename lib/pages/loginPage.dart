@@ -4,7 +4,7 @@ import 'package:medecin_app/helper/api.dart';
 import 'package:medecin_app/helper/showSnackBar.dart';
 import 'package:medecin_app/pages/homePage.dart';
 import 'package:medecin_app/pages/registerPage.dart';
-import 'package:medecin_app/sahred/shared.dart';
+import 'package:medecin_app/shared/shared.dart';
 
 import '../constants.dart';
 import '../generated/l10n.dart';

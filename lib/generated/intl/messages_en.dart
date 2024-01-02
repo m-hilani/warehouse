@@ -65,6 +65,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "state": MessageLookupByLibrary.simpleMessage("state"),
         "title_login": MessageLookupByLibrary.simpleMessage("LogIn"),
         "title_logo": MessageLookupByLibrary.simpleMessage("Pharmacy"),
-        "year": MessageLookupByLibrary.simpleMessage("year")
+        "year": MessageLookupByLibrary.simpleMessage("year"),
+        "repoYear": MessageLookupByLibrary.simpleMessage("Reports  of Month"),
+        "from": MessageLookupByLibrary.simpleMessage("From"),
+        "to": MessageLookupByLibrary.simpleMessage("To"),
+        "total_orders": MessageLookupByLibrary.simpleMessage("Total Orders"),
+        "total_sales": MessageLookupByLibrary.simpleMessage("Total Sales"),
+        "Report": MessageLookupByLibrary.simpleMessage("Report")
       };
 }

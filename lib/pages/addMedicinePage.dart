@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:medecin_app/constants.dart';
 import 'package:medecin_app/helper/api.dart';
 import 'package:medecin_app/models/medicine_model.dart';
-import 'package:medecin_app/sahred/shared.dart';
+import 'package:medecin_app/shared/shared.dart';
 import 'package:medecin_app/widgets/customButton.dart';
 
 import '../generated/l10n.dart';

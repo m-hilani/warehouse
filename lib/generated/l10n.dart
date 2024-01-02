@@ -439,6 +439,65 @@ class S {
       args: [],
     );
   }
+
+  /// `English`
+  String get repoYear {
+    return Intl.message(
+      'Reports  of Month',
+      name: 'repoYear',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `English`
+  String get from {
+    return Intl.message(
+      'From',
+      name: 'from',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `English`
+  String get to {
+    return Intl.message(
+      'To',
+      name: 'to',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `English`
+  String get total_orders {
+    return Intl.message(
+      'Total Orders',
+      name: 'total_orders',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `English`
+  String get total_sales {
+    return Intl.message(
+      'Total Sales',
+      name: 'total_sales',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get report {
+    return Intl.message(
+      'Report',
+      name: 'Report',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

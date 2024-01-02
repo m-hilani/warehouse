@@ -127,7 +127,7 @@ import 'package:medecin_app/constants.dart';
 import 'package:medecin_app/models/OrderModel.dart';
 import 'package:medecin_app/models/medicine_model.dart';
 import 'package:medecin_app/pages/OrderPage.dart';
-import 'package:medecin_app/sahred/shared.dart';
+import 'package:medecin_app/shared/shared.dart';
 
 import '../generated/l10n.dart';
 import '../helper/api.dart';

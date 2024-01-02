@@ -61,6 +61,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "state": MessageLookupByLibrary.simpleMessage("الحالة"),
         "title_login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "title_logo": MessageLookupByLibrary.simpleMessage("صيدلية"),
-        "year": MessageLookupByLibrary.simpleMessage("سنة")
+        "year": MessageLookupByLibrary.simpleMessage("سنة"),
+        "repoYear": MessageLookupByLibrary.simpleMessage("التقرير الشهري"),
+        "from": MessageLookupByLibrary.simpleMessage("من"),
+        "to": MessageLookupByLibrary.simpleMessage("الى"),
+        "total_orders": MessageLookupByLibrary.simpleMessage("الطلبات"),
+        "total_sales": MessageLookupByLibrary.simpleMessage("المبيعات"),
+        "Report": MessageLookupByLibrary.simpleMessage("التقرير")
       };
 }

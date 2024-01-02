@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:medecin_app/constants.dart';
 import 'package:medecin_app/generated/l10n.dart';
-import 'package:medecin_app/pages/favouritPage.dart';
+import 'package:medecin_app/models/RepoModel.dart';
+
 import 'package:medecin_app/pages/OrdersPage.dart';
 import 'package:medecin_app/pages/loginPage.dart';
 import 'package:medecin_app/pages/notfPage.dart';
 import 'package:medecin_app/providers/provider.dart';
-import 'package:medecin_app/sahred/shared.dart';
+import 'package:medecin_app/shared/shared.dart';
+import 'package:medecin_app/services/repo_service.dart';
 import 'package:provider/provider.dart';
 
 import '../pages/addMedicinePage.dart';
@@ -63,6 +65,19 @@ class MyDrawer extends StatelessWidget {
             },
             title: Text(
               S.of(context).Orders,
+              style: TextStyle(color: Colors.black, fontSize: 15),
+            ),
+          ),
+          ListTile(
+            leading: Icon(FontAwesomeIcons.book),
+            onTap: () async {
+              RepoModel repo = await RepoService()
+                  .getRepoService(end: DateTime.now().toString());
+              Navigator.pushNamed(context, NotficationsPage.id,
+                  arguments: repo);
+            },
+            title: Text(
+              S.of(context).report,
               style: TextStyle(color: Colors.black, fontSize: 15),
             ),
           ),

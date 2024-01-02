@@ -6,7 +6,6 @@ import 'package:medecin_app/pages/OrderPage.dart';
 import 'package:medecin_app/pages/OrdersPage.dart';
 import 'package:medecin_app/pages/addMedicinePage.dart';
 import 'package:medecin_app/pages/cartPage.dart';
-import 'package:medecin_app/pages/favouritPage.dart';
 import 'package:medecin_app/pages/homePage.dart';
 import 'package:medecin_app/pages/loginPage.dart';
 import 'package:medecin_app/pages/logoPage.dart';
@@ -16,12 +15,10 @@ import 'package:medecin_app/pages/productPage.dart';
 import 'package:medecin_app/pages/registerPage.dart';
 import 'package:medecin_app/pages/searchPage.dart';
 import 'package:medecin_app/providers/provider.dart';
-import 'package:medecin_app/sahred/shared.dart';
+import 'package:medecin_app/shared/shared.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-/*  await CacheNetwork.cacheInitialization();
-  token = await CacheNetwork.getCacheData(key: 'token');*/
   runApp(ChangeNotifierProvider(
       create: (context) {
         return dProvider();
@@ -48,7 +45,6 @@ class MedecinApp extends StatelessWidget {
         ProductPage.id: (context) => ProductPage(),
         OrderPage.id: (context) => OrderPage(),
         OrdersPage.id: (context) => OrdersPage(),
-        FavouritesPage.id: (context) => FavouritesPage(),
         NotficationsPage.id: (context) => NotficationsPage(),
       },
       initialRoute: LogoPage.id, //show your working screen here
