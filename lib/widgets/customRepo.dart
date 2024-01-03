@@ -23,7 +23,7 @@ class Repo extends StatelessWidget {
             end: Alignment.centerRight,
           ),
         ),
-        height: 300,
+        height: 290,
         width: 400,
         child: Padding(
           padding: EdgeInsets.all(10),
